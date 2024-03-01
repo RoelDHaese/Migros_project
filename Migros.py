@@ -22,7 +22,7 @@ def load_data(path):
 bezirke_df_raw = load_data(path="data/raw/KTZH_00000254_00001282.csv")
 df = deepcopy(bezirke_df_raw)
 
-with open("C:/Users/Roel/Desktop/Propulsion/roel-dhaese/03_Visualization/Data/data/data/GEN_A4_BEZIRKE_epsg4326.json", 'r', encoding = 'utf-8') as response:
+with open("data/raw/GEN_A4_BEZIRKE_epsg4326.json", 'r', encoding = 'utf-8') as response:
     bezirke_map = json.load(response)
 
 
