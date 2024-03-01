@@ -22,21 +22,17 @@ def load_data(path):
 bezirke_df_raw = load_data(path="data/raw/KTZH_00000254_00001282.csv")
 df = deepcopy(bezirke_df_raw)
 
-with open("data/raw/GEN_A4_BEZIRKE_epsg4326.json") as response:
+with open("C:/Users/Roel/Desktop/Propulsion/roel-dhaese/03_Visualization/Data/data/data/GEN_A4_BEZIRKE_epsg4326.json", 'r', encoding = 'utf-8') as response:
     bezirke_map = json.load(response)
 
+
 if st.checkbox("Show Dataframe"):
-    st.subheader("This is my dataset:")
+    st.subheader("This is our dataset:")
     st.dataframe(data=df)
 
 bezirk_df = df.groupby(["jahr", "bezirk"],as_index=False).anzahl.sum()
 
 bezirk_2023_df = bezirk_df[bezirk_df["jahr"] == 2023].reset_index()
-
-bezirk_2023_df['bezirk'] = bezirk_2023_df['bezirk'].replace({'Zürich':'ZÃ¼rich',
-                                                                      'Bülach':'BÃ¼lach',
-                                                                      'Pfäffikon':'PfÃ¤ffikon',
-                                                                      })
 
 df_shops = pd.read_csv("data/raw/supermarkets_df")
 
