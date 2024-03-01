@@ -93,6 +93,7 @@ fig2.update_layout(mapbox_style="carto-positron",
                   legend_font = dict(size = 18),
                   coloraxis_colorbar = dict(title = f'Population per discrict in 2023'))
 
-fig2.update_coloraxes(colorscale="Viridis", reversescale = True, colorbar_title_font_size = 17)
+fig2.update_coloraxes(colorscale="Viridis", reversescale = True, colorbar_title_font_size = 17, colorbar_thickness = 35, colorbar_len = 1.000005, 
+                    colorbar_tickfont_size = 17)
 
 st.plotly_chart(fig2)
